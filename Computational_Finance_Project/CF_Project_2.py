@@ -571,7 +571,7 @@ if __name__ == "__main__":
     #         is skipped entirely.
 
     CompareBases()
-    # PlotGBMPaths()
-    # ConvergencePlot_CompareBases()
-    # PlotSensitivity_Volatility()
-    # PlotSensitivity_T_1()
+    PlotGBMPaths()
+    ConvergencePlot_CompareBases()
+    PlotSensitivity_Volatility()
+    PlotSensitivity_T_1()
