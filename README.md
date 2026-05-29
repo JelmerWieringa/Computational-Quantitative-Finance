@@ -34,9 +34,32 @@ Computational-Quantitative-Finance/
 │   ├── CF_Project_4.py             # ESO pricing with dividends 
 │   └── Computational_Finance_Project_Jelmer_Wieringa.pdf
 │
-└── Quantitative_Finance/
-    └── (to be added)
+├── Quantitative_Finance/
+│   └── (to be added)
+│
+└── Animations
+    └── CF_Animation_MC.py
+    └── CF_Animation_LSM.py
 ```
+
+---
+
+## Animations
+
+
+**Monte Carlo convergence** — starting from $N = 25$ paths and incrementally growing to $N = 700$ in steps of 25, at each step the left panel adds GBM paths coloured by terminal moneyness (green: ITM, red: OTM), and the right panel shows convergence of the running MC estimate $\hat{V}(S_0, t_0)$ toward the exact Black-Scholes price (dashed), with the 95% confidence interval narrowing as $N$ grows.
+
+<img width="2100" height="750" alt="CF_Animation_MC_Convergence_nStart=25_nEnd=700_nStep=25" src="https://github.com/user-attachments/assets/705b1aa1-a6ca-42a7-ba2d-1c04b21af6ec" />
+
+
+<p align="center">
+
+**LSM backward induction** — starting from $t_{m-1}$ just before maturity $t_m = T_2 = 10$ and sweeping backward to the vesting boundary $T_1 = 3$, each frame shows one exercise date $t_i$ of the backward induction routine. The left panel displays the scatter of all $N = 2000$ paths split into OTM (red), ITM-continue (magenta), and ITM-exercise (green), overlaid with the immediate payoff $H(S) = \max \\{ S - K,\, 0 \\}$ (solid) and the OLS-fitted continuation value $\hat{c}(t_i, S) = \hat{\beta}_1 \cdot 1+ \hat{\beta}_2 \cdot S + \hat{\beta}_3 \cdot S^2$ (dashed) estimated on ITM paths. The dotted vertical line marks the estimated exercise boundary $S^*(t_i)$, the minimum stock price at which $H(S) \geq \hat{c}(S)$. The right panel accumulates these boundary estimates from right to left, revealing the full exercise boundary surface as the algorithm unwinds.
+ 
+<img width="2100" height="750" alt="CF_Animation_LSM_BackwardInduction_N=2000_m=50" src="https://github.com/user-attachments/assets/89c6f07f-8ff5-46c7-a042-b8ba59d6dc82" />
+
+
+
 
 ---
 
